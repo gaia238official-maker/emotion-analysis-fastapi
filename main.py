@@ -57,3 +57,8 @@ def create_emotion(emotion: EmotionCreate, db: Session = Depends(get_db)):
 def read_emotions(db: Session = Depends(get_db)):
     emotions = db.query(Emotion).all()
     return emotions
+
+# Simple test endpoint
+@app.get("/test")
+def test():
+    return {"message": "API is up and running"}
